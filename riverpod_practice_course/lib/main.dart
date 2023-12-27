@@ -5,10 +5,9 @@ import 'package:riverpod_practice_course/riverpod_example2/example2.dart';
 import 'package:riverpod_practice_course/riverpod_example3/example3.dart';
 import 'package:riverpod_practice_course/riverpod_example4/example4.dart';
 import 'package:riverpod_practice_course/riverpod_example5/example5.dart';
+import 'package:riverpod_practice_course/riverpod_example6/example6.dart';
 
-void main() {
-  runApp(const ProviderScope(child: MyApp()));
-}
+void main() {runApp(const ProviderScope(child: MyApp()));}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -23,7 +22,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(color: Colors.blue),
         useMaterial3: true
       ),
-      home: const Example5()
+      home: const Example6()
     );
   }
 }
