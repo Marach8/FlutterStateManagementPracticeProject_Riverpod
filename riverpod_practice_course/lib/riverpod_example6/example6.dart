@@ -114,7 +114,7 @@ class Example6 extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Films Example'), centerTitle: true),
+      appBar: AppBar(title: const Text('Films Example'), centerTitle: true, backgroundColor: Colors.black12,),
       body: Column(
         children: [
           const DropDownWidget(),

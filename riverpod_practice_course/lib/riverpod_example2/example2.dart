@@ -8,7 +8,7 @@ class Counter extends StateNotifier<int?>{
 }
 
 
-final counterProvider = StateNotifierProvider<Counter, int?>((ref)
+final counterProvider = StateNotifierProvider<Counter, int?>((_)
   => Counter()
 );
 
@@ -20,7 +20,7 @@ class Example2 extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(title: Consumer(
-        builder: (BuildContext context, WidgetRef ref, Widget? child) {
+        builder: (BuildContext _, WidgetRef ref, Widget? __) {
           final count = ref.watch(counterProvider);
           return Text(count.toString());
         },

@@ -20,4 +20,4 @@ class Example1 extends ConsumerWidget {
 }
 
 
-final dateTimeProvider = Provider<DateTime>((ref) => DateTime.now());
+final dateTimeProvider = Provider<DateTime>((_) => DateTime.now());
