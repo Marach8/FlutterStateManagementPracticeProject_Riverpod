@@ -4,7 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class Counter extends StateNotifier<int?>{
   Counter(): super(null);
-  void increment() => state = state == null ? 1 : state + 1;
+  void increment() => state = state == null ? 1 : state! + 1;
 }
 
 
@@ -40,10 +40,10 @@ class Example2 extends ConsumerWidget {
 }
 
 
-extension OptionalInfixAddition<T extends num> on T?{
-  T? operator +(T? other){
-    final shadow = this;
-    if(shadow != null){return shadow + (other ?? 0) as T;}
-    else{return null;}
-  }
-}
+// extension OptionalInfixAddition<T extends num> on T?{
+//   T? operator +(T? other){
+//     final shadow = this;
+//     if(shadow != null){return shadow + (other ?? 0) as T;}
+//     else{return null;}
+//   }
+// }
