@@ -5,6 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 class Counter extends StateNotifier<int?>{
   Counter(): super(null);
   void increment() => state = state == null ? 1 : state! + 1;
+  void decrement() => state = state == null ? 1 : state! - 1;
 }
 
 
@@ -29,9 +30,10 @@ class Example2 extends ConsumerWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          TextButton(
+          TextButton(            
+            onLongPress: ref.read(counterProvider.notifier).decrement,
             onPressed: ref.read(counterProvider.notifier).increment,
-            child: const Text('PressMe')
+            child: const Text('PressMe'),
           )
         ],
       )
