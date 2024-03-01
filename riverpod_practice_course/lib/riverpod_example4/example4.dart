@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-const names  = ['Emmanuel', 'David', 'Jeremiah', 'Jesse', 'Daniel', 'Nnanna', 'Greateness'];
+const names  = [
+  'Emmanuel',
+  'David',
+  'Jeremiah',
+  'Jesse',
+  'Daniel',
+  'Nnanna',
+  'Greateness'
+];
 
 final tickerProvider = StreamProvider((ref) => Stream.periodic(const Duration(seconds: 1), (i) => i + 1));
 final namesProvider = StreamProvider((ref){

@@ -21,8 +21,14 @@ class DataModel extends ChangeNotifier{
   void updatePerson(Person updatedPerson){
     final index = _people.indexOf(updatedPerson);
     final oldPerson = _people[index];
-    if(oldPerson.name != updatedPerson.name || oldPerson.age !=  updatedPerson.age){
-      _people[index] = oldPerson.updated(updatedPerson.name, updatedPerson.age);
+    if(
+      oldPerson.name != updatedPerson.name ||
+      oldPerson.age !=  updatedPerson.age
+    ){
+      _people[index] = oldPerson.updated(
+        updatedPerson.name,
+        updatedPerson.age
+      );
       notifyListeners();
     }
   }

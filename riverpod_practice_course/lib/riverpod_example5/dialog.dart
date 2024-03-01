@@ -5,7 +5,11 @@ import 'package:riverpod_practice_course/riverpod_example5/person_class.dart';
 final nameController = TextEditingController();
 final ageController = TextEditingController();
 
-Future<Person?> createOrUpdatePersonDialog(BuildContext context, String title, [Person? existingPerson]){
+Future<Person?> createOrUpdatePersonDialog(
+  BuildContext context, 
+  String title, 
+  [Person? existingPerson]
+){
   var name = existingPerson?.name;
   var age = existingPerson?.age;
   return showDialog<Person?>(
@@ -45,7 +49,9 @@ Future<Person?> createOrUpdatePersonDialog(BuildContext context, String title, [
                 Navigator.of(context).pop(newPerson);
               } 
               //Create a new person
-              else{Navigator.of(context).pop(Person(name: name!, age: age!));}
+              else{Navigator.of(context).pop(
+                Person(name: name!, age: age!)
+              );}
             }
             else{Navigator.pop(context);}
             // ageController.clear();

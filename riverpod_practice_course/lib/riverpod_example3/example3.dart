@@ -34,7 +34,10 @@ class Example3 extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final currentWeather = ref.watch(weatherProvider);
     return Scaffold(
-      appBar: AppBar(title: const Text('Weather App'), centerTitle: true),
+      appBar: AppBar(
+        title: const Text('Weather App'), 
+        centerTitle: true
+      ),
       body: Column(
         children: [
           Padding(

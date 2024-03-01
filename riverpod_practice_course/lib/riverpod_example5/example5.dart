@@ -12,7 +12,10 @@ class Example5 extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Example5'), centerTitle: true),
+      appBar: AppBar(
+        title: const Text('Example5'), 
+        centerTitle: true
+      ),
       body: Consumer(
         builder: ((context, ref, child) {
           final dataModel = ref.watch(personsProvider);
@@ -23,8 +26,14 @@ class Example5 extends ConsumerWidget {
               return ListTile(
                 title: GestureDetector(
                   onTap:() async{
-                    final updatedPerson = await createOrUpdatePersonDialog(context, 'Update Person', person);
-                    if(updatedPerson != null){dataModel.updatePerson(updatedPerson);}
+                    final updatedPerson = await createOrUpdatePersonDialog(
+                      context, 
+                      'Update Person', 
+                      person
+                    );
+                    if(updatedPerson != null){
+                      dataModel.updatePerson(updatedPerson);
+                    }
                   },
                   child: Text(person.displayName)
                 ),
@@ -35,7 +44,10 @@ class Example5 extends ConsumerWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async{
-          final person = await createOrUpdatePersonDialog(context, 'Create Person');
+          final person = await createOrUpdatePersonDialog(
+            context, 
+            'Create Person'
+          );
           if(person != null){
             final dataModel = ref.read(personsProvider);
             dataModel.addPerson(person);
