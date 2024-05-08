@@ -7,9 +7,18 @@ class Person{
   final int age;
   final String id;
 
-  Person({required this.name, required this.age, String? uuid}): id = uuid ?? const Uuid().v4();
+  Person({
+    required this.name,
+    required this.age,
+    String? uuid
+  }): id = uuid ?? const Uuid().v4();
 
-  Person updated([String? name, int? age]) => Person(name: name ?? this.name, age: age ?? this.age, uuid: id);
+  Person updated([String? name, int? age]) 
+    => Person(
+      name: name ?? this.name,
+      age: age ?? this.age,
+      uuid: id
+    );
 
   String get displayName => '$name ($age years old)';
 
